@@ -13,7 +13,8 @@
         android:layout_weight="1"
         android:text="@string/bt1_label"
         android:id="@+id/button"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:onClick="btTakePhotoClick"/>
 
     <Button
         android:layout_margin="10dp"
@@ -22,7 +23,8 @@
         android:layout_weight="1"
         android:text="@string/bt2_label"
         android:id="@+id/button2"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:onClick="btEditPhotoClick"/>
 
     <Button
         android:layout_margin="10dp"
@@ -31,5 +33,6 @@
         android:layout_weight="1"
         android:text="@string/bt3_label"
         android:id="@+id/button3"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:onClick="btSendPictureClick"/>
 </LinearLayout>
