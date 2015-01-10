@@ -7,5 +7,9 @@
     <string name="bt1_label">Zrób zdjęcie</string>
     <string name="bt2_label">Edytuj zdjęcie</string>
     <string name="bt3_label">Wyślij obrazek</string>
+    <string name="title_activity_take_photo">TakePhotoActivity</string>
+    <string name="bt3_takePicture">Zrób zdjęcie</string>
+    <string name="back">Powrót</string>
+
 
 </resources>

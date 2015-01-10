@@ -1,5 +1,6 @@
 package com.galos.maciej.drawlerproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -41,12 +42,15 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void btTakePhotoClick(View v){
+        Intent myIntent = new Intent(getApplicationContext(), TakePhotoActivity.class);
+        //myIntent.putExtra("key", value); //Optional parameters
+        startActivity(myIntent);
 
     }
     public void btEditPhotoClick(View v){
 
     }
     public void btSendPictureClick(View v){
-        
+
     }
 }
