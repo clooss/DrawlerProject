@@ -11,5 +11,8 @@
     <string name="bt3_takePicture">Zrób zdjęcie</string>
     <string name="back">Powrót</string>
     <string name="title_activity_edit_photo">EditPhotoActivity</string>
+    <string name="title_activity_send_email">SendEmailActivity</string>
+    <string name="file_name">image</string>
+    <string name="send_intent_name">image</string>
 
 </resources>

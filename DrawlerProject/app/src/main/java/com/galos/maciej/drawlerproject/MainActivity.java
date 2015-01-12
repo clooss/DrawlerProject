@@ -1,16 +1,20 @@
 package com.galos.maciej.drawlerproject;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import Classes.DataBase;
+
 
 public class MainActivity extends ActionBarActivity {
 
-
+    private DataBase dataBase = DataBase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,16 @@ public class MainActivity extends ActionBarActivity {
 
     }
     public void btSendPictureClick(View v){
+
+        String path = MediaStore.Images.Media.insertImage(getContentResolver(), dataBase.getBitmap(), "title", null);
+        Uri screenshotUri = Uri.parse(path);
+
+        final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+        emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        emailIntent.putExtra(Intent.EXTRA_STREAM, screenshotUri);
+        emailIntent.setType("image/png");
+
+        startActivity(Intent.createChooser(emailIntent, "Send email using"));
 
     }
 }
