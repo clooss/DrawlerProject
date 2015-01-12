@@ -20,6 +20,10 @@
             android:name=".TakePhotoActivity"
             android:label="@string/title_activity_take_photo" >
         </activity>
+        <activity
+            android:name=".EditPhotoActivity"
+            android:label="@string/title_activity_edit_photo" >
+        </activity>
     </application>
 
 </manifest>

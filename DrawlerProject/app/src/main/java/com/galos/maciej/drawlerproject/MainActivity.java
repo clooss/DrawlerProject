@@ -48,6 +48,8 @@ public class MainActivity extends ActionBarActivity {
 
     }
     public void btEditPhotoClick(View v){
+        Intent myIntent = new Intent(getApplicationContext(), EditPhotoActivity.class);
+        startActivity(myIntent);
 
     }
     public void btSendPictureClick(View v){
