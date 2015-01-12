@@ -11,10 +11,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import Classes.DataBase;
+
 
 public class TakePhotoActivity extends ActionBarActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    private DataBase dataBase = DataBase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class TakePhotoActivity extends ActionBarActivity {
                 Bitmap bitmap =(Bitmap)extras.get("data");
                 ImageView imageView = (ImageView)findViewById(R.id.imageView);
                 imageView.setImageBitmap(bitmap);
+                dataBase.setBitmap(bitmap);
 
             }else {
                 Toast.makeText(this, "Ups...", Toast.LENGTH_SHORT).show();
