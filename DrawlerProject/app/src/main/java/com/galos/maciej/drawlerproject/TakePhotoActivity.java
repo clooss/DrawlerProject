@@ -18,11 +18,17 @@ public class TakePhotoActivity extends ActionBarActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private DataBase dataBase = DataBase.getInstance();
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_photo);
+        imageView = (ImageView)findViewById(R.id.imageView);
+        if(dataBase.getLastPhoto()!=null)
+            imageView.setImageBitmap(dataBase.getLastPhoto());
+
+
     }
 
     @Override
@@ -56,9 +62,10 @@ public class TakePhotoActivity extends ActionBarActivity {
             if(resultCode == RESULT_OK){
                 Bundle extras = data.getExtras();
                 Bitmap bitmap =(Bitmap)extras.get("data");
-                ImageView imageView = (ImageView)findViewById(R.id.imageView);
+
                 imageView.setImageBitmap(bitmap);
                 dataBase.setBitmap(bitmap);
+                dataBase.setLastPhoto(bitmap);
 
             }else {
                 Toast.makeText(this, "Ups...", Toast.LENGTH_SHORT).show();

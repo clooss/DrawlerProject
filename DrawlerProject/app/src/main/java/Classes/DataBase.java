@@ -7,9 +7,11 @@ import android.graphics.Bitmap;
  */
 public final class DataBase {
     private Bitmap bitmap;
+    private Bitmap lastPhoto;
     private static volatile DataBase instance =null;
     private DataBase(){
         bitmap=null;
+        lastPhoto=null;
     }
     public static DataBase getInstance(){
         if(instance == null){
@@ -24,6 +26,12 @@ public final class DataBase {
     }
     public Bitmap getBitmap(){
         return bitmap;
+    }
+    public void setLastPhoto(Bitmap b){
+        lastPhoto = b;
+    }
+    public Bitmap getLastPhoto(){
+        return lastPhoto;
     }
 
 
