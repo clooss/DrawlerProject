@@ -28,6 +28,10 @@
             android:name=".SendEmailActivity"
             android:label="@string/title_activity_send_email" >
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>

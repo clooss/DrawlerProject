@@ -1,5 +1,6 @@
 package com.galos.maciej.drawlerproject;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
@@ -46,6 +47,11 @@ public class EditPhotoActivity extends ActionBarActivity {
         return b;
     }
 
+    public void btSettingsClick(View v){
+        Intent myIntent = new Intent(getApplicationContext(), SettingsActivity.class);
+        startActivity(myIntent);
+    }
+
     @Override
     protected void onPause() {
         loadBitmapFromView(drawingView);
@@ -72,5 +78,11 @@ public class EditPhotoActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        drawingView.setPaintStrokeWidth(dataBase.getStrokeWidth());
+        super.onResume();
     }
 }

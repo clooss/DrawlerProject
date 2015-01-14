@@ -1,6 +1,7 @@
 package com.galos.maciej.drawlerproject;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import Classes.ColorLabelItem;
 import Classes.DataBase;
 
 
@@ -20,6 +22,14 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    private void SetUp(){
+        dataBase.addNewColor(new ColorLabelItem("Red", Color.RED));
+        dataBase.addNewColor(new ColorLabelItem("Blue", Color.BLUE));
+        dataBase.addNewColor(new ColorLabelItem("Green", Color.GREEN));
+        dataBase.addNewColor(new ColorLabelItem("Black", Color.BLACK));
+        dataBase.addNewColor(new ColorLabelItem("White", Color.WHITE));
+
     }
 
 

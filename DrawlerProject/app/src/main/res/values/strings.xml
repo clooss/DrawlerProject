@@ -14,5 +14,6 @@
     <string name="title_activity_send_email">SendEmailActivity</string>
     <string name="file_name">image</string>
     <string name="send_intent_name">image</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 
 </resources>
