@@ -83,6 +83,7 @@ public class EditPhotoActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         drawingView.setPaintStrokeWidth(dataBase.getStrokeWidth());
+        drawingView.setPaintColor(dataBase.getColor());
         super.onResume();
     }
 }
