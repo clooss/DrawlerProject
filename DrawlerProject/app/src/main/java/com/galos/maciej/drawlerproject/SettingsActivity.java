@@ -21,12 +21,20 @@ public class SettingsActivity extends ActionBarActivity {
     private DataBase dataBase = DataBase.getInstance();
     private DrawingView drawingView;
     private ListView listView;
+    private boolean isLoaded=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        if(!isLoaded)
+            SetUp();
+        isLoaded=true;
 
+
+    }
+
+    private void SetUp(){
         ArrayList<ColorLabelItem> list = dataBase.getColorsList();
         listView = (ListView)findViewById(R.id.listView);
         RowAdapter adapter = new RowAdapter(this,R.layout.item1,list);
@@ -47,21 +55,20 @@ public class SettingsActivity extends ActionBarActivity {
         final SeekBar mySeekBar = ((SeekBar) findViewById(R.id.seekBar));
         drawingView = (DrawingView)findViewById(R.id.DrawingView);
         mySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
-                                               public void onProgressChanged(    SeekBar seekBar,    int progress,    boolean fromUser){
+                                                 public void onProgressChanged(    SeekBar seekBar,    int progress,    boolean fromUser){
 
 
-                                                   dataBase.setStrokeWidth((float) mySeekBar.getProgress());
+                                                     dataBase.setStrokeWidth((float) mySeekBar.getProgress());
 
 
-                                               }
-                                               public void onStartTrackingTouch(    SeekBar seekBar){
-                                               }
-                                               public void onStopTrackingTouch(    SeekBar seekBar){
+                                                 }
+                                                 public void onStartTrackingTouch(    SeekBar seekBar){
+                                                 }
+                                                 public void onStopTrackingTouch(    SeekBar seekBar){
 
-                                               }
-                                           }
+                                                 }
+                                             }
         );
-
     }
 
 

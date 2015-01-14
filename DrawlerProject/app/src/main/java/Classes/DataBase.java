@@ -22,6 +22,11 @@ public final class DataBase {
         bitmap=null;
         lastPhoto=null;
         color = Color.BLACK;
+        this.addNewColor(new ColorLabelItem("Red", Color.RED));
+        this.addNewColor(new ColorLabelItem("Blue", Color.BLUE));
+        this.addNewColor(new ColorLabelItem("Green", Color.GREEN));
+        this.addNewColor(new ColorLabelItem("Black", Color.BLACK));
+        this.addNewColor(new ColorLabelItem("White", Color.WHITE));
 
     }
     public static DataBase getInstance(){
